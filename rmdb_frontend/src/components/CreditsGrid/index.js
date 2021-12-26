@@ -1,0 +1,38 @@
+import React from "react";
+import { Wrapper, Image, NoImage } from "./CreditsGrid.styles";
+// Config
+import { IMAGE_BASE_URL, PROFILE_SIZE } from "../../config";
+// Router
+import { Link } from "react-router-dom";
+
+const CreditsGrid = ({ showing }) => {
+  return (
+    <Wrapper>
+      {showing.map((movie) => (
+        <Link
+          key={movie.id}
+          to={`/${movie.id}`}
+          style={{ textDecoration: "none" }}
+        >
+          {movie.poster_path && (
+            <Image
+              src={`${IMAGE_BASE_URL}${PROFILE_SIZE}${movie.poster_path}`}
+              alt="movie-thumb"
+              title={movie.title}
+            />
+          )}
+          {!movie.poster_path && !movie.release_date.slice(0, 4).length && (
+            <NoImage>{movie.title}</NoImage>
+          )}
+          {!movie.poster_path && movie.release_date.slice(0, 4).length && (
+            <NoImage>
+              {movie.title} ({movie.release_date.slice(0, 4)})
+            </NoImage>
+          )}
+        </Link>
+      ))}
+    </Wrapper>
+  );
+};
+
+export default CreditsGrid;
