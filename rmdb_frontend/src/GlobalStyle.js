@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         --fontBig: 1.5rem;
         --fontMed: 1rem;
         --fontSmall: .75rem;
+        --hoverBrightness: 85%;
         --hoverColor: greenyellow;
     }
 
