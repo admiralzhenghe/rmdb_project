@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 from django.db.models.expressions import F
 from django.core.validators import MinValueValidator, MaxValueValidator
+
 # Create your models here.
 
 class Movie(models.Model):
