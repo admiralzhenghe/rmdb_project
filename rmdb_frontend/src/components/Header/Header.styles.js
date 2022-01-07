@@ -9,9 +9,9 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: var(--maxWidth);
-  padding: 20px 0;
   margin: 0 auto;
+  max-width: var(--maxWidth);
+  padding: 1rem 0;
 
   link: {
     text-decoration: none;
@@ -24,7 +24,7 @@ export const Logo = styled.div`
   display: flex;
   font-size: var(--fontSuperBig);
   justify-content: center;
-  text-decoration: none;
+  padding: 2px;
   width: 125px;
 
   @media screen and (max-width: 500px) {
@@ -32,15 +32,29 @@ export const Logo = styled.div`
   }
 `;
 
-export const Profile = styled.a`
-  color: var(--white);
-  font-size: var(--fontBig);
+export const HeaderLinkContainer = styled.div`
+  display: flex;
+  animation: showSignIn 0.5s;
 
-  :link {
-    text-decoration: none;
+  @keyframes showSignIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
-  :hover {
-    text-decoration: none;
-    color: var(--hoverColor);
+
+  .header-link {
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    font-size: var(--fontMedium);
+    padding: 1rem 1rem;
+
+    &:hover {
+      color: var(--hoverColor);
+    }
   }
 `;
