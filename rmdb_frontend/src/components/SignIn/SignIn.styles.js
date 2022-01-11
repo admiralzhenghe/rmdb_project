@@ -50,9 +50,7 @@ export const Wrapper = styled.div`
       padding: 0.25rem 0.5rem;
     }
 
-    #username:focus {
-      background: var(--white);
-    }
+    #username:focus,
     #password:focus {
       background: var(--white);
     }
