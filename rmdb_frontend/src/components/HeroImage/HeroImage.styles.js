@@ -25,7 +25,7 @@ export const Text = styled.div`
   min-height: 100px;
   position: absolute;
   bottom: 40px;
-  z-index: 100;
+  z-index: 1;
 
   h1 {
     font-size: var(--fontSuperBig);
