@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 // Component
+import Profile from "../Profile/index.js";
 import SignIn from "../SignIn/index.js";
 // context
 import { useAuthContext } from "../../context/AuthContext.js";
 // Router
 import { Link } from "react-router-dom";
 // Styled
-import { Wrapper, Content, Logo, HeaderLinkContainer } from "./Header.styles";
+import { Wrapper } from "./Header.styles";
 
 const Header = () => {
-  const { modal, setModal } = useAuthContext();
-  const [showSignIn, setShowSignIn] = useState(false);
+  const { modal, setModal, user, showSignIn, setShowSignIn } = useAuthContext();
 
   return (
     <Wrapper>
-      <Content>
+      <div className="content">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <Logo>RMDB</Logo>
+          <div className="logo">RMDB</div>
         </Link>
         {/* If a user is not found, then show Login and Create Account links */}
-        {showSignIn && <SignIn setShowSignIn={setShowSignIn} />}
-        {!showSignIn && (
-          <HeaderLinkContainer>
+        {user && <Profile username={user.username} />}
+        {!user && showSignIn && <SignIn />}
+        {!user && !showSignIn && (
+          <div className="header-link-container">
             <div
               className="sign-in header-link"
               onClick={() => setShowSignIn(!showSignIn)}
@@ -34,9 +35,9 @@ const Header = () => {
             >
               Create Account
             </div>
-          </HeaderLinkContainer>
+          </div>
         )}
-      </Content>
+      </div>
     </Wrapper>
   );
 };

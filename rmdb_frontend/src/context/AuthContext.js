@@ -22,6 +22,7 @@ export function AuthProvider({ children }) {
       ? JSON.parse(localStorage.getItem("authTokens")).user
       : null
   );
+  const [showSignIn, setShowSignIn] = useState(false);
 
   const [modal, setModal] = useState(false);
 
@@ -54,6 +55,7 @@ export function AuthProvider({ children }) {
       setTokens(tokens);
       setUser(data.user);
       localStorage.setItem("authTokens", JSON.stringify(tokens));
+      setShowSignIn(false);
       navigate("/");
     } else {
       alert("Login error!");
@@ -174,14 +176,16 @@ export function AuthProvider({ children }) {
       console.log("Clearing interval");
       clearInterval(interval);
     };
-  }, [tokens, loading]);
+  }, [loading, tokens]);
 
   const contextData = {
-    modal,
-    setModal,
     loginUser,
     logoutUser,
     registerUser,
+    modal,
+    setModal,
+    showSignIn,
+    setShowSignIn,
     updateToken,
     user,
   };

@@ -18,7 +18,8 @@ export const Wrapper = styled.div`
     }
   }
 
-  .container {
+  .container,
+  form {
     display: flex;
     align-items: flex-end;
   }

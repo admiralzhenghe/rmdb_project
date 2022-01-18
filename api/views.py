@@ -9,7 +9,6 @@ from rest_framework.response import Response
 # Serializers
 from .serializers import MovieSerializer
 
-
 # Create your views here.
 
 
