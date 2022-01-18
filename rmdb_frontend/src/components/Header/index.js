@@ -6,12 +6,8 @@ import { Link } from "react-router-dom";
 // Styled
 import { Wrapper, Content, Logo, HeaderLinkContainer } from "./Header.styles";
 
-const Header = () => {
+const Header = ({ modalOpen, setModalOpen }) => {
   const [showSignIn, setShowSignIn] = useState(false);
-
-  const handleSignInClick = (e) => {
-    setShowSignIn(!showSignIn);
-  };
 
   return (
     <Wrapper>
@@ -23,10 +19,18 @@ const Header = () => {
         {showSignIn && <SignIn setShowSignIn={setShowSignIn} />}
         {!showSignIn && (
           <HeaderLinkContainer>
-            <div className="header-link" onClick={handleSignInClick}>
+            <div
+              className="sign-in header-link"
+              onClick={() => setShowSignIn(!showSignIn)}
+            >
               Sign In
             </div>
-            <div className="header-link">Create Account</div>
+            <div
+              className="create-account header-link"
+              onClick={() => setModalOpen(!modalOpen)}
+            >
+              Create Account
+            </div>
           </HeaderLinkContainer>
         )}
       </Content>
