@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 // Component
 import SignIn from "../SignIn/index.js";
+// context
+import { useAuthContext } from "../../context/AuthContext.js";
 // Router
 import { Link } from "react-router-dom";
 // Styled
 import { Wrapper, Content, Logo, HeaderLinkContainer } from "./Header.styles";
 
-const Header = ({ modalOpen, setModalOpen }) => {
+const Header = () => {
+  const { modal, setModal } = useAuthContext();
   const [showSignIn, setShowSignIn] = useState(false);
 
   return (
@@ -27,7 +30,7 @@ const Header = ({ modalOpen, setModalOpen }) => {
             </div>
             <div
               className="create-account header-link"
-              onClick={() => setModalOpen(!modalOpen)}
+              onClick={() => setModal(!modal)}
             >
               Create Account
             </div>
