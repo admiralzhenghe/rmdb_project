@@ -1,6 +1,6 @@
 import React from "react";
 // Component
-import Profile from "../Profile/index.js";
+import ProfileDropdown from "../ProfileDropdown/index.js";
 import SignIn from "../SignIn/index.js";
 // context
 import { useAuthContext } from "../../context/AuthContext.js";
@@ -19,7 +19,7 @@ const Header = () => {
           <div className="logo">RMDB</div>
         </Link>
         {/* If a user is not found, then show Login and Create Account links */}
-        {user && <Profile username={user.username} />}
+        {user && <ProfileDropdown username={user.username} />}
         {!user && showSignIn && <SignIn />}
         {!user && !showSignIn && (
           <div className="header-link-container">
