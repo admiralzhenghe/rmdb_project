@@ -1,7 +1,7 @@
 import React from "react";
 // Context
 import { useAuthContext } from "../../context/AuthContext";
-//  Styled
+//  Styles
 import { Wrapper } from "./SignIn.styles";
 
 export default function SignIn() {

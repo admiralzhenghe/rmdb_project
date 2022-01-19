@@ -5,7 +5,7 @@ import Thumb from "../Thumb";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 // Helper
 import { calcTime, convertMoney } from "../../helpers";
-// Image
+// Images
 import NoImage from "../../images/no_image.jpg";
 // Router
 import { Link } from "react-router-dom";

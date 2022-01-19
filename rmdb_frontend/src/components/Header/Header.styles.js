@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     margin: 0 auto;
     max-width: var(--maxWidth);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 
     link: {
       text-decoration: none;

@@ -1,5 +1,5 @@
 import React from "react";
-// Styled
+// Styles
 import { Select } from "./Dropdown.style";
 
 const Dropdown = ({ credits, jobs, handleSelect }) => {

@@ -1,13 +1,14 @@
 import React from "react";
-// Component
+// Components
 import Bio from "../Bio";
 import Credits from "../Credits";
-import { Wrapper, Content } from "./Person.styles";
-// Hook
+import Spinner from "../Spinner";
+// Hooks
 import { usePersonFetch } from "../../hooks/usePersonFetch";
 // Router
 import { useParams } from "react-router";
-import Spinner from "../Spinner";
+// Styles
+import { Wrapper, Content } from "./Person.styles";
 
 const Person = () => {
   const { personId } = useParams();

@@ -11,8 +11,8 @@ const initialState = {
 export const useHomeFetch = () => {
   const [state, setState] = useState(initialState);
   const [error, setError] = useState(false);
-  const [isLoadMore, setIsLoadMore] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isLoadMore, setIsLoadMore] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   const fetchMovies = async (search = "", page) => {
@@ -41,7 +41,6 @@ export const useHomeFetch = () => {
 
   // Initial render
   useEffect(() => {
-    console.log("Mounted");
     setState(initialState);
     setLoading(true);
     fetchMovies(`${searchTerm}`, 1);

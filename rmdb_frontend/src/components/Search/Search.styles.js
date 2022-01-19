@@ -12,11 +12,11 @@ export const Content = styled.div`
   background: var(--medGrey);
   border-radius: 50px;
   color: var(--white);
-  margin: 0 auto;
+  height: 55px;
   width: 100%;
   max-width: var(--maxWidth);
+  margin: 0 auto;
   position: relative;
-  height: 55px;
 
   img {
     position: absolute;

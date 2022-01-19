@@ -1,7 +1,7 @@
 import React from "react";
-// Component
+// Components
 import { Wrapper } from "./ReadMore.styles";
-// Hook
+// Hooks
 import { useState } from "react";
 
 const ReadMore = ({ biography }) => {

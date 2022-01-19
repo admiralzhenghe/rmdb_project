@@ -9,7 +9,7 @@ export const Wrapper = styled.button`
   display: block;
   font-size: var(--fontBig);
   height: 40px;
-  width: 25%auto;
+  width: 25% auto;
   min-width: 200px;
   margin: 20px auto;
 

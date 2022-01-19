@@ -1,9 +1,10 @@
 import React from "react";
-import { Wrapper, Image, NoImage } from "./CreditsGrid.styles";
 // Config
 import { IMAGE_BASE_URL, PROFILE_SIZE } from "../../config";
 // Router
 import { Link } from "react-router-dom";
+// Styles
+import { Wrapper, Image, NoImage } from "./CreditsGrid.styles";
 
 const CreditsGrid = ({ showing }) => {
   return (

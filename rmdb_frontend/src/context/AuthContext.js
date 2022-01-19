@@ -166,14 +166,12 @@ export function AuthProvider({ children }) {
       updateToken();
     }
     let minutes = 1000 * 60 * 4;
-    console.log("Four minutes");
     let interval = setInterval(() => {
       if (tokens) {
         updateToken();
       }
     }, minutes);
     return () => {
-      console.log("Clearing interval");
       clearInterval(interval);
     };
   }, [loading, tokens]);

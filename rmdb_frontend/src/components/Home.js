@@ -1,5 +1,5 @@
 import React from "react";
-// Component
+// Components
 import Button from "./Button";
 import Grid from "./Grid";
 import HeroImage from "./HeroImage";
@@ -8,9 +8,9 @@ import Spinner from "./Spinner";
 import Thumb from "./Thumb";
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
-// Hook
+// Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
-// Image
+// Images
 import NoImage from "../images/no_image.jpg";
 
 const Home = () => {

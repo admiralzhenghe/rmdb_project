@@ -3,7 +3,7 @@ import React from "react";
 import { useAuthContext } from "../../context/AuthContext";
 // Portal
 import { createPortal } from "react-dom";
-// Styled
+// Styles
 import { Wrapper } from "./RegisterModal.styles";
 
 export default function RegisterModal() {

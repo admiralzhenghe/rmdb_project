@@ -1,5 +1,5 @@
 import React from "react";
-// Component
+// Components
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Movie from "./components/Movie";
@@ -10,7 +10,7 @@ import RegisterModal from "./components/RegisterModal";
 import { AuthProvider } from "./context/AuthContext";
 // Router
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// Style
+// Styles
 import { GlobalStyle } from "./GlobalStyle";
 
 function App() {

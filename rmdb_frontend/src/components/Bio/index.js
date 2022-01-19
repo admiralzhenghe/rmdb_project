@@ -3,7 +3,7 @@ import React from "react";
 import ReadMore from "../ReadMore";
 // Config
 import { IMAGE_BASE_URL, PROFILE_SIZE } from "../../config";
-// Styled
+// Styles
 import { Wrapper, Image, NoImage } from "./Bio.styles";
 
 export const Bio = ({ person, loading }) => {

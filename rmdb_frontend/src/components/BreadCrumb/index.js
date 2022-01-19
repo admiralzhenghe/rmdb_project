@@ -1,5 +1,7 @@
 import React from "react";
+// Prop Types
 import PropTypes from "prop-types";
+// Router
 import { Link } from "react-router-dom";
 // Styles
 import { Wrapper, Content } from "./BreadCrumb.styles";

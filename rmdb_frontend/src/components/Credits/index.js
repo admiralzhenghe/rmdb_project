@@ -1,8 +1,9 @@
-// Component
+import { useState } from "react";
+// Components
 import CreditsGrid from "../CreditsGrid";
-import { Content, Wrapper } from "./Credits.style";
-import { useState } from "react/cjs/react.development";
 import Dropdown from "../Dropdown";
+// Styles
+import { Content, Wrapper } from "./Credits.style";
 
 const Credits = ({ person, credits }) => {
   let keys = Object.keys(credits);

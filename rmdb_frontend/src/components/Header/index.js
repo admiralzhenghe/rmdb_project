@@ -2,11 +2,11 @@ import React from "react";
 // Component
 import ProfileDropdown from "../ProfileDropdown/index.js";
 import SignIn from "../SignIn/index.js";
-// context
+// Context
 import { useAuthContext } from "../../context/AuthContext.js";
 // Router
 import { Link } from "react-router-dom";
-// Styled
+// Styles
 import { Wrapper } from "./Header.styles";
 
 const Header = () => {

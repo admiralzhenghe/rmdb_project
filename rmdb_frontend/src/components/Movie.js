@@ -1,5 +1,5 @@
 import React from "react";
-// Component
+// Components
 import Actor from "./Actor";
 import BreadCrumb from "./BreadCrumb";
 import Grid from "./Grid";
@@ -7,7 +7,7 @@ import MovieInfo from "./MovieInfo";
 import Spinner from "./Spinner";
 // Config
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
-// Hook
+// Hooks
 import { useMovieFetch } from "../hooks/useMovieFetch";
 // Router
 import { useParams } from "react-router-dom";

@@ -1,7 +1,7 @@
 import React from "react";
-// Hook
+// Hooks
 import { useState, useEffect, useRef } from "react";
-// Image
+// Images
 import searchIcon from "../../images/search-icon.svg";
 // Styles
 import { Wrapper, Content } from "./Search.styles";
