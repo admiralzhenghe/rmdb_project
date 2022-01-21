@@ -9,6 +9,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class Movie(models.Model):
   user = models.ForeignKey(User, on_delete=CASCADE, related_name='movies')
   movieId = models.IntegerField()
+  title = models.CharField(max_length=200)
+  posterPath = models.CharField(max_length=200)
   watch = models.BooleanField(default=False)
   like = models.BooleanField(default=False)
   watchlist = models.BooleanField(default=False)
