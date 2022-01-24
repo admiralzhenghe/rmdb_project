@@ -2,15 +2,24 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
 
   .watch,
   .like,
   .watchlist {
-    margin: 0 auto;
+    border: 1px solid purple;
+    width: 25%;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    div {
+      position: absolute;
+      top: 0;
+    }
 
     :hover {
       color: var(--hoverColor);
@@ -19,13 +28,17 @@ export const Wrapper = styled.div`
   }
 
   img {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     width: 2rem;
     filter: brightness(0) invert(1) opacity(0.5);
 
     :hover {
       cursor: pointer;
     }
+  }
+
+  .watch img {
+    width: 3rem;
   }
 
   .selected {

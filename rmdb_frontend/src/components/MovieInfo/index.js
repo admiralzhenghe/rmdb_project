@@ -26,7 +26,7 @@ const MovieInfo = ({ movie }) => {
     rating: 0,
   });
 
-  // Update the movie log in the database
+  // Create or update the movie log in the database
   useEffect(() => {
     if (loading) return;
     const API_URL = "http://127.0.0.1:8000/api/update-movie/";
@@ -93,8 +93,8 @@ const MovieInfo = ({ movie }) => {
             {movie.title} ({movie.release_date.slice(0, 4)})
           </h2>
           <p>
-            {movie.release_date} ·
-            {movie.genres.map((genre) => genre.name).join(", ")}
+            {movie.release_date} ·{" "}
+            {movie.genres.map((genre) => genre.name).join(", ")} ·{" "}
             {calcTime(movie.runtime)}
           </p>
           <div className="rating-directors">

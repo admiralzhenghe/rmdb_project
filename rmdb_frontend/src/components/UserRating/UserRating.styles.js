@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
   .container {
     display: block;
     margin: 0 auto;
+
+    :hover {
+      color: var(--hoverColor);
+    }
   }
 
   .title {

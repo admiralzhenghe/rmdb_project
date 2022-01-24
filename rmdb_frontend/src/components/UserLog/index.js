@@ -44,15 +44,15 @@ export default function UserLog({ movieLog, setMovieLog }) {
   return (
     <Wrapper ref={actionEl} onClick={handleClick}>
       <section className="watch">
-        <div className="title">{watch ? "Watched" : "Watch"}</div>
+        <div>{watch ? "Watched" : "Watch"}</div>
         <img src={watchIcon} alt="watch" />
       </section>
       <section className="like">
-        <div className="title">{like ? "Liked" : "Like"}</div>
+        <div>{like ? "Liked" : "Like"}</div>
         <img src={likeIcon} alt="like" />
       </section>
       <section className="watchlist">
-        <div className="title">Watchlist</div>
+        <div>Watchlist</div>
         <img src={watchlistIcon} alt="watchlist" />
       </section>
     </Wrapper>

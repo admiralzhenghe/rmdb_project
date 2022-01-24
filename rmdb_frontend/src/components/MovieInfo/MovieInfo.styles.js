@@ -36,7 +36,7 @@ export const Content = styled.div`
 export const Text = styled.div`
   color: var(--white);
   padding: 1.5rem;
-  width: 75%;
+  width: 100%;
 
   .title {
     font-weight: bolder;
@@ -80,11 +80,12 @@ export const Text = styled.div`
   }
 
   .user-panel {
-    margin: 1rem 0;
-    width: 55%;
+    border: 1px solid green;
+    margin-top: 0.75rem;
+    width: 50%;
 
     @media screen and (max-width: 900px) {
-      width: 75%;
+      width: 65%;
     }
   }
 
