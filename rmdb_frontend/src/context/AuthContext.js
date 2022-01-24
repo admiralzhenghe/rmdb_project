@@ -56,6 +56,7 @@ export function AuthProvider({ children }) {
       setUser(data.user);
       localStorage.setItem("authTokens", JSON.stringify(tokens));
       setShowSignIn(false);
+      window.location.reload();
     } else {
       alert("Login error!");
     }
