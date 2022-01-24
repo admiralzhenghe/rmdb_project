@@ -133,16 +133,13 @@ export function AuthProvider({ children }) {
   let updateToken = async () => {
     if (!user) return setLoading(false);
 
-    let response = await fetch(
-      "http://127.0.0.1:8000/api/rest-auth/token/refresh/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ refresh: tokens?.refresh }),
-      }
-    );
+    let response = await fetch(`${URL}rest-auth/token/refresh/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ refresh: tokens?.refresh }),
+    });
 
     let data = await response.json();
 
