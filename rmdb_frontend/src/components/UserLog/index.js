@@ -6,7 +6,7 @@ import watchlistIcon from "../../images/watchlist.svg";
 // Styles
 import { Wrapper } from "./UserLog.styles";
 
-export default function UserLog({ movieLog, setMovieLog }) {
+export default function UserLog({ movieLog, setMovieLog, setUpdating }) {
   const [watch, setWatch] = useState(movieLog.watch);
   const [like, setLike] = useState(movieLog.like);
   const [watchlist, setWatchlist] = useState(movieLog.watchlist);
@@ -14,6 +14,7 @@ export default function UserLog({ movieLog, setMovieLog }) {
   const actionEl = useRef(null);
 
   const handleClick = (e) => {
+    setUpdating(true);
     let action = e.target.closest("section");
     let options = {
       watch: [watch, setWatch],

@@ -4,11 +4,12 @@ import popcorn from "../../images/popcorn.svg";
 // Styles
 import { Wrapper } from "./UserRating.styles";
 
-export default function UserRating({ movieLog, setMovieLog }) {
+export default function UserRating({ movieLog, setMovieLog, setUpdating }) {
   const popcornRatingEl = useRef(null);
   const previousRating = useRef(movieLog.rating);
 
   const handleClick = (e) => {
+    setUpdating(true);
     let rating = Number(
       e.currentTarget.closest("label").querySelector("input").value
     );

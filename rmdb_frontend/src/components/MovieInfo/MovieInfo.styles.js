@@ -23,13 +23,13 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   background: rgba(0, 0, 0, 0.75);
   border-radius: 25px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 250px;
   margin: 0 auto;
   max-width: var(--maxWidth);
 
   @media screen and (max-width: 768px) {
     display: block;
-    max-height: 100%;
   }
 `;
 
@@ -38,61 +38,27 @@ export const Text = styled.div`
   padding: 1.5rem;
   width: 100%;
 
-  .title {
-    font-weight: bolder;
-    margin-top: 10px;
+  .director {
+    font-size: 1rem;
 
-    @media screen and (max-width: 768px) {
-      font-size: var(--fontBig);
-    }
-  }
+    span {
+      color: var(--white);
 
-  .rating-directors {
-    display: flex;
-    justify-content: flex-start;
-
-    .tmdb-rating {
-      background: ${({ rating }) =>
-        rating > 7 ? "green" : rating > 4 ? "goldenrod" : "red"};
-      border-radius: 50%;
-      color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 35px;
-      width: 35px;
-      margin: 5px auto 0 auto;
-      pointer-events: none;
-    }
-
-    .director {
-      margin: 0 0 0 40px;
-
-      .director-name {
-        color: var(--white);
-        margin: 0;
-
-        :hover {
-          color: var(--hoverColor);
-        }
+      :hover {
+        color: var(--hoverColor);
       }
-    }
-  }
-
-  .user-panel {
-    border: 1px solid green;
-    margin-top: 0.75rem;
-    width: 50%;
-
-    @media screen and (max-width: 900px) {
-      width: 65%;
     }
   }
 
   .tagline {
     color: var(--lightGrey);
     font-style: italic;
-    margin: 25px 0 5px 0;
+  }
+
+  .overview {
+    @media screen and (max-width: 768px) {
+      font-size: var(--fontBig);
+    }
   }
 
   .movie-overview {

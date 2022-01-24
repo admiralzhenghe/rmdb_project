@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 // Components
 import Thumb from "../Thumb";
-import UserLog from "../UserLog";
-import UserRating from "../UserRating";
+import UserPanel from "../UserPanel";
 //Config
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 // Context
@@ -19,6 +18,7 @@ import { Wrapper, Content, Text } from "./MovieInfo.styles";
 const MovieInfo = ({ movie }) => {
   const { tokens, user } = useAuthContext();
   const [loading, setLoading] = useState(true);
+  const [updating, setUpdating] = useState(false);
   const [movieLog, setMovieLog] = useState({
     watch: false,
     like: false,
@@ -29,6 +29,7 @@ const MovieInfo = ({ movie }) => {
   // Create or update the movie log in the database
   useEffect(() => {
     if (loading) return;
+    if (!updating) return;
     const API_URL = "http://127.0.0.1:8000/api/update-movie/";
     fetch(`${API_URL}${movie.id}`, {
       method: "POST",
@@ -47,6 +48,7 @@ const MovieInfo = ({ movie }) => {
         rating: movieLog.rating,
       }),
     });
+    setUpdating(false);
   }, [movieLog]);
 
   // On load, check if the user has logged the current movie
@@ -90,43 +92,44 @@ const MovieInfo = ({ movie }) => {
         />
         <Text rating={movie.vote_average}>
           <h2>
-            {movie.title} ({movie.release_date.slice(0, 4)})
+            {movie.title} ({movie.release_date.slice(0, 4)}) <br />
+            <span className="director">
+              Directed by{" "}
+              {movie.directors.map((director, idx) => (
+                <span>
+                  {/* If there are multiple directors, add commas */}
+                  {idx > 0 && <span>, </span>}
+                  <Link
+                    key={director.credit_id}
+                    to={`/person/${director.id}`}
+                    style={{ textDecoration: "none " }}
+                  >
+                    <span className="director-name">{director.name}</span>
+                  </Link>
+                </span>
+              ))}
+            </span>
           </h2>
+          {movie.tagline && (
+            <h4 className="tagline">{movie.tagline.toUpperCase()}</h4>
+          )}
+          <div className="overview">Overview</div>
+          <p className="movie-overview">{movie.overview}</p>
           <p>
             {movie.release_date} ·{" "}
             {movie.genres.map((genre) => genre.name).join(", ")} ·{" "}
             {calcTime(movie.runtime)}
           </p>
-          <div className="rating-directors">
-            <div className="rating">
-              <div className="title">TMDB Rating</div>
-              <div className="tmdb-rating">{movie.vote_average}</div>
-            </div>
-            <div className="director">
-              <div className="title">
-                Director{movie.directors.length > 1 ? "s" : ""}
-              </div>
-              {movie.directors.map((director) => (
-                <Link
-                  key={director.credit_id}
-                  to={`/person/${director.id}`}
-                  style={{ textDecoration: "none " }}
-                >
-                  <p className="director-name">{director.name}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-          {user && !loading && (
-            <div className="user-panel">
-              <UserLog movieLog={movieLog} setMovieLog={setMovieLog} />
-              <UserRating movieLog={movieLog} setMovieLog={setMovieLog} />
-            </div>
-          )}
-          <div className="tagline">{movie.tagline.toUpperCase()}</div>
-          <div className="title">Overview</div>
-          <p className="movie-overview">{movie.overview}</p>
         </Text>
+        {user && !loading && (
+          <UserPanel
+            movie={movie}
+            movieLog={movieLog}
+            setMovieLog={setMovieLog}
+            updating={updating}
+            setUpdating={setUpdating}
+          />
+        )}
       </Content>
     </Wrapper>
   );

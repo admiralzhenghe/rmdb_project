@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  border: 1px solid red;
   justify-content: space-between;
+  margin: 1rem 0;
 
   .watch,
   .like,
   .watchlist {
-    border: 1px solid purple;
     width: 25%;
     display: flex;
     flex-flow: column;

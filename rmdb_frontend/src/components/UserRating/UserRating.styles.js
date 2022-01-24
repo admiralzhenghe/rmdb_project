@@ -1,17 +1,12 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  .container {
-    display: block;
-    margin: 0 auto;
+  margin: 1rem 0;
 
+  .container {
     :hover {
       color: var(--hoverColor);
     }
-  }
-
-  .title {
-    text-align: center;
   }
 
   .popcorn-rating {
