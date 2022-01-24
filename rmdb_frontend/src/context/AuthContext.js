@@ -56,7 +56,6 @@ export function AuthProvider({ children }) {
       setUser(data.user);
       localStorage.setItem("authTokens", JSON.stringify(tokens));
       setShowSignIn(false);
-      navigate("/");
     } else {
       alert("Login error!");
     }
@@ -185,6 +184,7 @@ export function AuthProvider({ children }) {
     showSignIn,
     setShowSignIn,
     updateToken,
+    tokens,
     user,
   };
 
