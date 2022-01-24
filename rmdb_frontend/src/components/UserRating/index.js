@@ -17,6 +17,7 @@ export default function UserRating({ movie, movieLog }) {
     let rating = e.currentTarget.closest("label").querySelector("input").value;
     if (rating === previousRating.current) {
       setRating(0);
+      previousRating.current = null;
     } else {
       previousRating.current = rating;
       setRating(Number(rating));
@@ -39,7 +40,6 @@ export default function UserRating({ movie, movieLog }) {
 
   // Update the popcorn ratings in the database
   useEffect(() => {
-    console.log(rating === previousRating.current);
     if (rating === previousRating.current) return;
 
     const API_URL = "http://127.0.0.1:8000/api/update-movie/";
