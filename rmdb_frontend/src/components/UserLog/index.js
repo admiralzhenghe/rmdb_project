@@ -26,7 +26,7 @@ export default function UserLog({ movieLog, setMovieLog }) {
     }
   };
 
-  // If the movie is logged or the movie log is updated, render its movie log
+  // If the movie is logged or updated, re-render its movie log
   useEffect(() => {
     let options = [watch, like, watchlist];
     actionEl.current.querySelectorAll("img").forEach((img, idx) => {
