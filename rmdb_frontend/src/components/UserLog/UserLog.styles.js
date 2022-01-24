@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   .watch,
   .like,
   .watchlist {
-    border: 1px solid green;
     margin: 0 auto;
     display: flex;
     flex-flow: column;
@@ -32,5 +31,10 @@ export const Wrapper = styled.div`
   .selected {
     filter: invert(75%) sepia(45%) saturate(686%) hue-rotate(36deg)
       brightness(112%) contrast(102%);
+  }
+
+  .like-selected {
+    filter: invert(25%) sepia(90%) saturate(7500%) hue-rotate(357deg)
+      brightness(99%) contrast(120%);
   }
 `;
