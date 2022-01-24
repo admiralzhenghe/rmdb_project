@@ -1,13 +1,6 @@
 // Config
 import { SEARCH_BASE_URL, POPULAR_BASE_URL, API_URL, API_KEY } from "./config";
 
-const defaultConfig = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-};
-
 const apiSettings = {
   fetchMovies: (searchTerm, page) => {
     const endpoint = searchTerm
