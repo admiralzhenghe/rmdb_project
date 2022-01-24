@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 # Serializers
-from .serializers import MovieSerializer
+from . serializers import MovieSerializer
 
 # Create your views here.
 
@@ -25,3 +25,41 @@ def getMovies(request):
   movies = Movie.objects.all()
   serializer = MovieSerializer(movies, many=True)
   return Response(serializer.data)
+
+
+def get_or_none(model, **kwargs):
+  try:
+    return model.objects.get(**kwargs)
+  except model.DoesNotExist:
+    return None
+
+#  Get the user's log for a specific movie
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getMovie(request, movie_id):
+  movie = get_or_none(Movie, user=request.user, movieId=movie_id)
+  if movie:
+    s = MovieSerializer(movie, many=False)
+    return Response(s.data)
+  else:
+    return Response(None)
+
+
+# Update the user's log for a specific movie
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def updateMovie(request, movie_id):  
+  movie = get_or_none(Movie, user=request.user, movieId=movie_id)
+
+  # If movie does not exist, create a new Movie instance
+  if not movie: 
+    s = MovieSerializer(data=request.data)
+    if s.is_valid():
+      s.save()
+  #  Otherwise, update the existing Movie instance
+  else:
+    s = MovieSerializer(instance=movie, data=request.data)
+    if s.is_valid():
+      s.save()
+
+  return Response(s.data)
