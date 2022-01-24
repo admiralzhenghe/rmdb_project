@@ -51,6 +51,7 @@ const MovieInfo = ({ movie }) => {
 
   // On load, check if the user has logged the current movie
   useEffect(() => {
+    if (!user) return;
     const API_URL = "http://127.0.0.1:8000/api/get-movie/";
     const getMovie = async () => {
       let response = await fetch(`${API_URL}${movie.id}`, {
