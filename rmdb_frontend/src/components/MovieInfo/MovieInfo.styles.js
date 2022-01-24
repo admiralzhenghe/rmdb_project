@@ -81,10 +81,10 @@ export const Text = styled.div`
 
   .user-panel {
     margin: 1rem 0;
-    width: 50%;
+    width: 55%;
 
-    @media screen and (max-width: 768px) {
-      width: 100%;
+    @media screen and (max-width: 900px) {
+      width: 75%;
     }
   }
 
