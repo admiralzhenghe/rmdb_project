@@ -22,12 +22,10 @@ const CreditsGrid = ({ showing }) => {
               title={movie.title}
             />
           )}
-          {!movie.poster_path && !movie.release_date.slice(0, 4).length && (
-            <NoImage>{movie.title}</NoImage>
-          )}
-          {!movie.poster_path && movie.release_date.slice(0, 4).length && (
+          {!movie.poster_path && (
             <NoImage>
-              {movie.title} ({movie.release_date.slice(0, 4)})
+              {movie.title}{" "}
+              {movie.release_date ? `(${movie.release_date.slice(0, 4)})` : ""}
             </NoImage>
           )}
         </Link>
