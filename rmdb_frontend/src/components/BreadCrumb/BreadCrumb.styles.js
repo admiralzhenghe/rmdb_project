@@ -29,7 +29,7 @@ export const Content = styled.div`
 
   @media screen and (max-width: 768px) {
     span {
-      font-size: var(--fontBig);
+      font-size: var(--fontMed);
     }
   }
 `;

@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   border-radius: 25px;
   display: flex;
   margin: 0 auto;
@@ -35,23 +35,10 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   color: var(--white);
-  overflow: hidden;
-  padding: 20px 40px;
-  width: 100%;
-
-  .rating-directors {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .tagline {
-    color: var(--lightGrey);
-    font-style: italic;
-    margin: 25px 0 5px 0;
-  }
+  padding: 1.5rem;
+  width: 75%;
 
   .title {
-    font-size: 1.2rem;
     font-weight: bolder;
     margin-top: 10px;
 
@@ -60,35 +47,54 @@ export const Text = styled.div`
     }
   }
 
-  p {
-    margin-top: 0;
-  }
-
-  .rating {
-    align-items: center;
-    background: ${({ rating }) =>
-      rating > 7 ? "green" : rating > 4 ? "goldenrod" : "red"};
-    border-radius: 50%;
-    color: #000;
+  .rating-directors {
     display: flex;
-    font-weight: 800;
-    height: 35px;
-    justify-content: center;
-    margin: 5px auto 0 auto;
-    pointer-events: none;
-    width: 35px;
-  }
+    justify-content: flex-start;
 
-  .director {
-    margin: 0 0 0 40px;
+    .tmdb-rating {
+      background: ${({ rating }) =>
+        rating > 7 ? "green" : rating > 4 ? "goldenrod" : "red"};
+      border-radius: 50%;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 35px;
+      width: 35px;
+      margin: 5px auto 0 auto;
+      pointer-events: none;
+    }
 
-    p {
-      color: var(--white);
-      margin: 0;
+    .director {
+      margin: 0 0 0 40px;
 
-      :hover {
-        color: var(--hoverColor);
+      .director-name {
+        color: var(--white);
+        margin: 0;
+
+        :hover {
+          color: var(--hoverColor);
+        }
       }
     }
+  }
+
+  .user-panel {
+    margin: 1rem 0;
+    width: 50%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .tagline {
+    color: var(--lightGrey);
+    font-style: italic;
+    margin: 25px 0 5px 0;
+  }
+
+  .movie-overview {
+    margin-top: 0;
   }
 `;
