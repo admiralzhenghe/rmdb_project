@@ -37,11 +37,13 @@ const Home = () => {
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                 : NoImage
             }
-            clickable
             movieId={movie.id}
+            movieTitle={movie.title}
+            clickable
           />
         ))}
       </Grid>
+
       {loading && <Spinner />}
       {!loading && state.page < state.total_pages && (
         <Button text="Load More" callback={() => setIsLoadMore(true)} />
