@@ -31,6 +31,36 @@ export default function UserLog({ movieLog, setMovieLog, setUpdating }) {
     }
   };
 
+  const handleMouseEnter = (e) => {
+    let options = { watch, like, watchlist };
+    let option = e.currentTarget.className;
+    // If the current option is true, then change the target's innerText to "Remove" on mouse hover
+    if (options[option]) {
+      e.currentTarget.querySelector("div").innerText = "Remove";
+    }
+  };
+
+  const handleMouseLeave = (e) => {
+    let option = e.currentTarget.className;
+    switch (option) {
+      case "watch":
+        e.currentTarget.querySelector("div").innerText = watch
+          ? "Watched"
+          : "Watch";
+        break;
+      case "like":
+        e.currentTarget.querySelector("div").innerText = like
+          ? "Liked"
+          : "Like";
+        break;
+      case "watchlist":
+        e.currentTarget.querySelector("div").innerText = "Watchlist";
+        break;
+      default:
+        return;
+    }
+  };
+
   // If the movie is logged or updated, re-render its movie log
   useEffect(() => {
     let options = [watch, like, watchlist];
@@ -50,41 +80,24 @@ export default function UserLog({ movieLog, setMovieLog, setUpdating }) {
     <Wrapper ref={actionEl} onClick={handleClick}>
       <section
         className="watch"
-        onMouseEnter={(e) => {
-          if (watch) e.currentTarget.querySelector("div").innerText = "Remove";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.querySelector("div").innerText = watch
-            ? "Watched"
-            : "Watch";
-        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div>{watch ? "Watched" : "Watch"}</div>
         <img src={watchIcon} alt="watch" />
       </section>
       <section
         className="like"
-        onMouseEnter={(e) => {
-          if (like) e.currentTarget.querySelector("div").innerText = "Remove";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.querySelector("div").innerText = like
-            ? "Liked"
-            : "Like";
-        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div>{like ? "Liked" : "Like"}</div>
         <img src={likeIcon} alt="like" />
       </section>
       <section
         className="watchlist"
-        onMouseEnter={(e) => {
-          if (watchlist)
-            e.currentTarget.querySelector("div").innerText = "Remove";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.querySelector("div").innerText = "Watchlist";
-        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div>Watchlist</div>
         <img src={watchlistIcon} alt="watchlist" />
