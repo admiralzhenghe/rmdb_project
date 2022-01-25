@@ -14,15 +14,19 @@ export default function UserLog({ movieLog, setMovieLog, setUpdating }) {
   const actionEl = useRef(null);
 
   const handleClick = (e) => {
-    setUpdating(true);
     let action = e.target.closest("section");
-    let options = {
-      watch: [watch, setWatch],
-      like: [like, setLike],
-      watchlist: [watchlist, setWatchlist],
-    };
     if (action?.className) {
+      setUpdating(true);
+      let options = {
+        watch: [watch, setWatch],
+        like: [like, setLike],
+        watchlist: [watchlist, setWatchlist],
+      };
       let [option, setOption] = options[action.className];
+      // If Watch is set to true and Watchlist is already true, then set Watchlist to false
+      if (action.className === "watch") {
+        if (!watch === true && watchlist === true) setWatchlist(false);
+      }
       setOption(!option);
     }
   };
