@@ -1,19 +1,24 @@
 import styled from "styled-components";
 
 export const Image = styled.img`
-  border-radius: 20px;
+  border: 2.5px solid transparent;
+  border-radius: 5px;
   display: flex;
+  width: 100%;
   max-width: 720px;
   object-fit: cover;
-  width: 100%;
-  animation: animateThumb 0.5s;
 
-  @keyframes animateThumb {
+  :hover {
+    border: 2.5px solid var(--hoverColor);
+    animation: animateBorder 0.25s;
+  }
+
+  @keyframes animateBorder {
     from {
-      opacity: 0;
+      border: 2.5px solid transparent;
     }
     to {
-      opacity: 1;
+      border: 2.5px solid var(--hoverColor);
     }
   }
 `;
