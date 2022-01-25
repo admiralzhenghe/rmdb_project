@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Image = styled.img`
   border: 2.5px solid transparent;
-  border-radius: 5px;
+  border-radius: 25px;
   display: flex;
   width: 100%;
   max-width: 720px;
