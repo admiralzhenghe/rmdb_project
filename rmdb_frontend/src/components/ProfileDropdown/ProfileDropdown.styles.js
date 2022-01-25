@@ -45,7 +45,9 @@ export const Wrapper = styled.div`
       width: 150px;
     }
 
-    li {
+    li,
+    .link {
+      color: white;
       cursor: pointer;
       padding: 0.5rem 0;
       padding-left: 1rem;
