@@ -29,6 +29,7 @@ const MovieInfo = ({ movie }) => {
   // Create or update the movie log in the database
   useEffect(() => {
     if (loading) return;
+    // If the user does not update the movie's log, do not trigger an API POST
     if (!updating) return;
     const API_URL = "http://127.0.0.1:8000/api/update-movie/";
     fetch(`${API_URL}${movie.id}`, {
