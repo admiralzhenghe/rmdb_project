@@ -44,15 +44,44 @@ export default function UserLog({ movieLog, setMovieLog, setUpdating }) {
 
   return (
     <Wrapper ref={actionEl} onClick={handleClick}>
-      <section className="watch">
-        <div>{watch ? "Watched" : "Watch"}</div>
+      <section
+        className="watch"
+        onMouseEnter={(e) => {
+          if (watch) e.currentTarget.querySelector("div").innerText = "Remove";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.querySelector("div").innerText = watch
+            ? "Watched"
+            : "Watch";
+        }}
+      >
+        <div hoverText={"Remove"}>{watch ? "Watched" : "Watch"}</div>
         <img src={watchIcon} alt="watch" />
       </section>
-      <section className="like">
+      <section
+        className="like"
+        onMouseEnter={(e) => {
+          if (like) e.currentTarget.querySelector("div").innerText = "Remove";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.querySelector("div").innerText = like
+            ? "Liked"
+            : "Like";
+        }}
+      >
         <div>{like ? "Liked" : "Like"}</div>
         <img src={likeIcon} alt="like" />
       </section>
-      <section className="watchlist">
+      <section
+        className="watchlist"
+        onMouseEnter={(e) => {
+          if (watchlist)
+            e.currentTarget.querySelector("div").innerText = "Remove";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.querySelector("div").innerText = "Watchlist";
+        }}
+      >
         <div>Watchlist</div>
         <img src={watchlistIcon} alt="watchlist" />
       </section>
