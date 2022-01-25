@@ -34,7 +34,6 @@ export const Content = styled.div`
 `;
 
 export const Text = styled.div`
-  border: 1px solid green;
   color: var(--white);
   padding: 1rem 1.5rem;
   width: 100%;
