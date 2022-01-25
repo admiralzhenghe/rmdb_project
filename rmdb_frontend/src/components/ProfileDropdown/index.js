@@ -27,7 +27,7 @@ export default function ProfileDropdown({ username }) {
       {showDropdown && (
         <div className="dropdown-links-container">
           <ul className="dropdown-links">
-            <li>WATCHED</li>
+            <li>FILMS</li>
             <li>LIKES</li>
             <li>WATCHLIST</li>
             <li onClick={logoutUser}>SIGN OUT</li>
