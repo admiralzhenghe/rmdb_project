@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Images
 import popcorn from "../../images/popcorn.svg";
 // Styles
 import { Wrapper } from "./UserRating.styles";
 
 export default function UserRating({ movieLog, setMovieLog, setUpdating }) {
+  const [previewPopcorn, setPreviewPopcorn] = useState(null);
+  const [previewing, setPreviewing] = useState(false);
+
   const popcornRatingEl = useRef(null);
   const previousRating = useRef(movieLog.rating);
 
@@ -23,17 +26,46 @@ export default function UserRating({ movieLog, setMovieLog, setUpdating }) {
     }
   };
 
+  const handleMouseEnter = (e) => {
+    setPreviewing(true);
+    let previewRating = Number(e.currentTarget.previousElementSibling.value);
+    setPreviewPopcorn(previewRating);
+  };
+
+  const handleMouseLeave = (e) => {
+    // Reset the visible popcorns back to the logged amount or none
+    setPreviewing(false);
+  };
+
+  // Update the number of visible popcorns based on where the user's mouse hovers
+  useEffect(() => {
+    if (previewing === true) {
+      // Reset the ratings
+      popcornRatingEl.current.childNodes.forEach((child) => {
+        child.querySelector("img").classList.add("unselected");
+      });
+      for (let i = 0; i < previewPopcorn; i++) {
+        popcornRatingEl.current.childNodes[i].children[1].classList.remove(
+          "unselected"
+        );
+      }
+    }
+  }, [previewing, previewPopcorn]);
+
   // Update the number of visible popcorns based on the user's rating
   useEffect(() => {
-    popcornRatingEl.current.childNodes.forEach((child) => {
-      child.querySelector("img").classList.add("unselected");
-    });
-    for (let i = 0; i < movieLog.rating; i++) {
-      popcornRatingEl.current.childNodes[i].children[1].classList.remove(
-        "unselected"
-      );
+    if (previewing === false) {
+      // Reset the ratings
+      popcornRatingEl.current.childNodes.forEach((child) => {
+        child.querySelector("img").classList.add("unselected");
+      });
+      for (let i = 0; i < movieLog.rating; i++) {
+        popcornRatingEl.current.childNodes[i].children[1].classList.remove(
+          "unselected"
+        );
+      }
     }
-  }, [movieLog.rating]);
+  }, [movieLog.rating, previewing]);
 
   return (
     <Wrapper>
@@ -49,6 +81,8 @@ export default function UserRating({ movieLog, setMovieLog, setUpdating }) {
                   src={popcorn}
                   alt="popcorn"
                   onClick={handleClick}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 />
               </label>
             );

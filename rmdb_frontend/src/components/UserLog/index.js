@@ -55,7 +55,7 @@ export default function UserLog({ movieLog, setMovieLog, setUpdating }) {
             : "Watch";
         }}
       >
-        <div hoverText={"Remove"}>{watch ? "Watched" : "Watch"}</div>
+        <div>{watch ? "Watched" : "Watch"}</div>
         <img src={watchIcon} alt="watch" />
       </section>
       <section
