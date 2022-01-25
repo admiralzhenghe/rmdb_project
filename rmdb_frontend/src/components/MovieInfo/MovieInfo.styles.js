@@ -24,7 +24,7 @@ export const Content = styled.div`
   background: rgba(0, 0, 0, 0.75);
   border-radius: 25px;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px;
+  grid-template-columns: 1fr 1.5fr 250px;
   margin: 0 auto;
   max-width: var(--maxWidth);
 

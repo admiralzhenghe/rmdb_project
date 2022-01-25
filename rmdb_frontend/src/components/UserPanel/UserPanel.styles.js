@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  align-self: center;
   color: var(--white);
-  height: 80%;
-  padding: 0.75rem;
+  padding: 1.5rem;
 
   @media screen and (max-width: 768px) {
     max-width: 55%;
