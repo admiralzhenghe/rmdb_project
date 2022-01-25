@@ -96,7 +96,7 @@ const MovieInfo = ({ movie }) => {
             <span className="director">
               Directed by{" "}
               {movie.directors.map((director, idx) => (
-                <span>
+                <span key={idx}>
                   {/* If there are multiple directors, add commas */}
                   {idx > 0 && <span>, </span>}
                   <Link
