@@ -7,7 +7,7 @@ import Search from "./Search";
 import Spinner from "./Spinner";
 import Thumb from "./Thumb";
 // Config
-import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
+import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 // Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
 // Images
