@@ -21,8 +21,14 @@ def apiOverview(request):
 
 
 @api_view(['GET'])
-def getMovies(request):
-  movies = Movie.objects.all()
+@permission_classes([IsAuthenticated])
+def getMovies(request, type):
+  if type == 'watch':
+    movies = (request.user.movies.filter(watch=True))
+  elif type == 'likes':
+    movies = (request.user.movies.filter(like=True))
+  elif type == 'watchlist':
+    movies = (request.user.movies.filter(watchlist=True))
   serializer = MovieSerializer(movies, many=True)
   return Response(serializer.data)
 
