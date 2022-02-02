@@ -52,8 +52,13 @@ export default function Films() {
                 />
               </Link>
               <div className="popcorn-container">
-                {[...Array(movie.rating)].map((idx) => (
-                  <img className="popcorn" src={popcorn} alt="" />
+                {[...Array(movie.rating)].map((a, idx) => (
+                  <img
+                    className="popcorn"
+                    src={popcorn}
+                    alt=""
+                    key={`${movie.movieId}-${idx}`}
+                  />
                 ))}
               </div>
             </div>
