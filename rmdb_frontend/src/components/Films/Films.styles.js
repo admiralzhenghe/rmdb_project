@@ -16,11 +16,19 @@ export const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
 
-  .grid {
-    display: grid;
-    grid-gap: 0 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  .popcorn-container {
+    min-height: 0.5rem;
   }
+
+  .popcorn {
+    width: 0.95rem;
+  }
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  grid-gap: 0 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 
   .thumb {
     border: 2.5px solid transparent;
@@ -31,22 +39,14 @@ export const Wrapper = styled.div`
       border: 2.5px solid var(--hoverColor);
       animation: animateBorder 0.25s;
     }
-  }
 
-  .popcorn-container {
-    min-height: 0.5rem;
-  }
-
-  .popcorn {
-    width: 0.95rem;
-  }
-
-  @keyframes animateBorder {
-    from {
-      border: 2.5px solid transparent;
-    }
-    to {
-      border: 2.5px solid var(--hoverColor);
+    @keyframes animateBorder {
+      from {
+        border: 2.5px solid transparent;
+      }
+      to {
+        border: 2.5px solid var(--hoverColor);
+      }
     }
   }
 `;

@@ -10,7 +10,7 @@ import popcorn from "../../images/popcorn.svg";
 // Router
 import { Link } from "react-router-dom";
 // Styles
-import { Wrapper } from "./Films.styles";
+import { Wrapper, Grid } from "./Films.styles";
 
 export default function Films() {
   const { tokens } = useAuthContext();
@@ -41,7 +41,7 @@ export default function Films() {
     <Wrapper>
       <div className="container">
         <section className="description">WATCHED</section>
-        <div className="grid">
+        <Grid>
           {state.map((movie) => (
             <div className="image-container" key={movie.movieId}>
               <Link to={`/${movie.movieId}`}>
@@ -63,7 +63,7 @@ export default function Films() {
               </div>
             </div>
           ))}
-        </div>
+        </Grid>
       </div>
     </Wrapper>
   );
