@@ -23,7 +23,7 @@ const Home = () => {
       {!searchTerm && mostPopular && (
         <HeroImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${mostPopular.backdrop_path}`}
-          title={mostPopular.original_title}
+          title={mostPopular.movie_title}
           text={mostPopular.overview}
         />
       )}
