@@ -30,6 +30,12 @@ export const Grid = styled.div`
   grid-gap: 0 1rem;
   grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
 
+  .thumb-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
   .thumb {
     border: 2.5px solid transparent;
     border-radius: 5px;

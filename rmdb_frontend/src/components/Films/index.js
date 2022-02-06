@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 // Component
+import ThumbnailPanel from "../ThumbnailPanel";
 import Spinner from "../Spinner";
 // Config
 import { IMAGE_BASE_URL, PROFILE_SIZE } from "../../config";
@@ -35,6 +36,16 @@ export default function Films() {
     getMovies();
   }, []);
 
+  const handleMouseEnter = (e) => {
+    let thumbPanel = e.currentTarget.querySelector(".thumb-panel");
+    thumbPanel.style.display = "block";
+  };
+
+  const handleMouseLeave = (e) => {
+    let thumbPanel = e.currentTarget.querySelector(".thumb-panel");
+    thumbPanel.style.display = "none";
+  };
+
   if (loading) return <Spinner />;
 
   return (
@@ -43,14 +54,23 @@ export default function Films() {
         <section className="description">WATCHED</section>
         <Grid>
           {state.map((movie) => (
-            <div className="image-container" key={movie.movieId}>
-              <Link to={`/${movie.movieId}`}>
-                <img
-                  className="thumb"
-                  src={IMAGE_BASE_URL + PROFILE_SIZE + movie.posterPath}
-                  alt=""
-                />
-              </Link>
+            <div key={movie.movieId}>
+              <div
+                className="thumb-container"
+                key={movie.movieId}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link to={`/${movie.movieId}`}>
+                  <img
+                    className="thumb"
+                    src={IMAGE_BASE_URL + PROFILE_SIZE + movie.posterPath}
+                    alt=""
+                    title={movie.title}
+                  />
+                </Link>
+                <ThumbnailPanel className="thumb-panel" movie={movie} />
+              </div>
               <div className="popcorn-container">
                 {[...Array(movie.rating)].map((a, idx) => (
                   <img
