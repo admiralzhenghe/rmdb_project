@@ -39,6 +39,7 @@ def get_or_none(model, **kwargs):
   except model.DoesNotExist:
     return None
 
+
 #  Get the user's log for a specific movie
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
