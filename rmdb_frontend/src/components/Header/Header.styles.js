@@ -15,6 +15,18 @@ export const Wrapper = styled.div`
     link: {
       text-decoration: none;
     }
+
+    @media screen and (max-width: 480px) {
+      display: block;
+
+      .logo {
+        margin: 0 auto;
+      }
+
+      .header-link-container {
+        justify-content: space-evenly;
+      }
+    }
   }
 
   .logo {
@@ -23,12 +35,9 @@ export const Wrapper = styled.div`
     display: flex;
     font-size: var(--fontSuperBig);
     justify-content: center;
+    margin: 0 1rem 0 0;
     padding: 2px;
     width: 125px;
-
-    @media screen and (max-width: 500px) {
-      font-size: var(--fontBig);
-    }
   }
 
   .header-link-container {

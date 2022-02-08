@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   position: relative;
   width: 150px;
 
+  @media screen and (max-width: 480px) {
+    margin: 0 auto;
+  }
+
   &:hover {
     background: grey;
   }

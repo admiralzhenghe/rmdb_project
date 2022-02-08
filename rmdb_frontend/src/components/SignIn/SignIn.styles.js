@@ -6,16 +6,12 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100%;
   padding: 0.25rem 0;
   animation: showSignIn 0.5s;
 
-  @keyframes showSignIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  @media screen and (max-width: 480px) {
+    margin-top: 0.5rem;
   }
 
   .container,
@@ -49,6 +45,7 @@ export const Wrapper = styled.div`
       border-radius: 5px;
       outline: none;
       padding: 0.25rem 0.5rem;
+      width: 100%;
     }
 
     #username:focus,
@@ -65,8 +62,21 @@ export const Wrapper = styled.div`
     margin: 0 0.5rem;
     padding: 0.25rem 1rem;
 
+    @media screen and (max-width: 480px) {
+      padding: 0.25rem;
+    }
+
     &:hover {
       filter: brightness(var(--hoverBrightness));
+    }
+  }
+
+  @keyframes showSignIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 `;

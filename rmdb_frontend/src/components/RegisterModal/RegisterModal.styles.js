@@ -13,15 +13,6 @@ export const Wrapper = styled.div`
     width: 400px;
     z-index: 3;
     animation: showSignUp 0.5s;
-
-    @keyframes showSignUp {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
   }
 
   .top {
@@ -77,5 +68,20 @@ export const Wrapper = styled.div`
     bottom: 0;
     left: 0;
     z-index: 2;
+  }
+
+  @media screen and (max-width: 480px) {
+    .sign-up {
+      max-width: 90%;
+    }
+  }
+
+  @keyframes showSignUp {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
