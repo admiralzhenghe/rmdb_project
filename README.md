@@ -1,6 +1,6 @@
 # RMDB (React Movie Database)
 
-Full stack movie database website showing movie information along with features for a user to track and rate movies.
+Movie information database with user features to log and rate movies.
 
 ## Architecture
 
@@ -18,16 +18,16 @@ Full stack movie database website showing movie information along with features 
 
 **Backend**
 
-- Language
+- Language:
 
   - Python
 
-- Framework/Libraries
+- Framework/Libraries:
 
   - Django
-    - Django Rest Framework
-    - Django Rest Auth
-    - Simple JWT
+  - Django Rest Framework
+  - Django Rest Auth
+  - Simple JWT
 
 - Database:
   - SQLite
