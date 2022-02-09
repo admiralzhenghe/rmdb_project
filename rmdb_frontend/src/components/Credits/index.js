@@ -1,7 +1,7 @@
 import { useState } from "react";
 // Components
 import CreditsGrid from "../CreditsGrid";
-import Dropdown from "../Dropdown";
+import CreditsDropdown from "../CreditsDropdown";
 // Styles
 import { Content, Wrapper } from "./Credits.style";
 
@@ -34,7 +34,11 @@ const Credits = ({ person, credits }) => {
           </div>
           <div className="name">{person.name}</div>
         </div>
-        <Dropdown credits={credits} jobs={jobs} handleSelect={handleSelect} />
+        <CreditsDropdown
+          credits={credits}
+          jobs={jobs}
+          handleSelect={handleSelect}
+        />
         <CreditsGrid showing={credits[showing]} />
       </Content>
     </Wrapper>

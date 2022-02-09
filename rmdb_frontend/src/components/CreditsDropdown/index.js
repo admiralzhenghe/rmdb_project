@@ -1,8 +1,8 @@
 import React from "react";
 // Styles
-import { Select } from "./Dropdown.style";
+import { Select } from "./CreditsDropdown.style";
 
-const Dropdown = ({ credits, jobs, handleSelect }) => {
+const CreditsDropdown = ({ credits, jobs, handleSelect }) => {
   return (
     <Select onChange={(e) => handleSelect(e.target.value)}>
       {jobs.map((job) => (
@@ -14,4 +14,4 @@ const Dropdown = ({ credits, jobs, handleSelect }) => {
   );
 };
 
-export default Dropdown;
+export default CreditsDropdown;
