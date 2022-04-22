@@ -1,17 +1,15 @@
 # RMDB (React Movie Database)
 
-Movie information database for users to find, rate, and log movies.
-
 ## Overview
 
-This project is a movie database based on [IMDB](https://www.imdb.com/) and [Letterboxd](https://letterboxd.com/). It uses [The Movie Database](https://www.themoviedb.org/) API to fetch movie information and a custom Django REST Framework API to fetch user information. All web pages are mobile-responsive.
+RMDB is a movie database for users to find, rate and log movies. It is based on [IMDB](https://www.imdb.com/) and [Letterboxd](https://letterboxd.com/) and uses [The Movie Database](https://www.themoviedb.org/) API to fetch movie information and a custom Django REST Framework API to fetch user information. All web pages are mobile-responsive.
 
 **Installation**
 
 - Navigate to the root directory where `manage.py` is located.
 - Install project dependencies by running `pip install -r requirements.txt`.
 - Make and apply migrations by running `python manage.py makemigrations` and `python manage.py migrate`.
-- Create superuser with `python manage.py createsuperuser`. (Optional).
+- Create superuser with `python manage.py createsuperuser` (optional). 
 - Start the project by running `python manage.py runserver`.
 
 ## Architecture
