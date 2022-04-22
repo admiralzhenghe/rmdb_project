@@ -2,7 +2,7 @@
 
 Movie information database for users to find, rate, and log movies.
 
-## Introduction
+## Overview
 
 This project is a movie database based on [IMDB](https://www.imdb.com/) and [Letterboxd](https://letterboxd.com/). It uses [The Movie Database](https://www.themoviedb.org/) API to fetch movie information and a custom Django REST Framework API to fetch user information. All web pages are mobile-responsive.
 
@@ -19,7 +19,6 @@ This project is a movie database based on [IMDB](https://www.imdb.com/) and [Let
 **Frontend**
 
 - Languages:
-
   - HTML
   - CSS
   - JavaScript
@@ -31,11 +30,9 @@ This project is a movie database based on [IMDB](https://www.imdb.com/) and [Let
 **Backend**
 
 - Language:
-
   - Python
 
 - Framework/Libraries:
-
   - Django
   - Django REST Framework
   - Django REST Auth
@@ -45,6 +42,7 @@ This project is a movie database based on [IMDB](https://www.imdb.com/) and [Let
   - SQLite
 
 ## Demo
+
 **User account registration and log in**
 
 ![registration_and_login](https://user-images.githubusercontent.com/68667158/164564426-8faa3763-f9a9-4dc9-9975-2e19873b4ec4.gif)
