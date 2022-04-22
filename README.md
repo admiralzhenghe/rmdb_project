@@ -2,7 +2,7 @@
 
 ## Overview
 
-RMDB is a movie database for users to find, rate and log movies. It is based on [IMDB](https://www.imdb.com/) and [Letterboxd](https://letterboxd.com/) and uses [The Movie Database](https://www.themoviedb.org/) API to fetch movie information and a custom Django REST Framework API to fetch user information. All web pages are mobile-responsive.
+RMDB is a movie database inspired by [IMDB](https://www.imdb.com/) and [Letterboxd](https://letterboxd.com/). It uses [The Movie Database](https://www.themoviedb.org/) API to fetch movie information and a custom Django REST Framework API to fetch user information. All web pages are mobile-responsive.
 
 **Installation**
 
