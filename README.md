@@ -41,22 +41,22 @@ RMDB is a movie database inspired by [IMDB](https://www.imdb.com/) and [Letterbo
 
 ## Demo
 
-**User account registration and log in**
+### User registration and login
 
 ![registration_and_login](https://user-images.githubusercontent.com/68667158/164564426-8faa3763-f9a9-4dc9-9975-2e19873b4ec4.gif)
 
-**Searching for movies**
+### Searching for movies
 
 ![searching](https://user-images.githubusercontent.com/68667158/164565175-e615feba-9393-4c18-8270-78fddcd28a02.gif)
 
-**Rating and logging movies**
+### Rating and logging movies
 
 ![rating_and_logging](https://user-images.githubusercontent.com/68667158/164565194-6a3465b6-cd63-4a4a-965a-e0aa72616c7a.gif)
 
-**Biographical information**
+### Biographical information
 
 ![bio](https://user-images.githubusercontent.com/68667158/164567805-e4625262-d4a2-4cdc-af4b-3c4caafb6036.gif)
 
-**Mobile responsiveness**
+### Mobile responsiveness
 
 ![mobile](https://user-images.githubusercontent.com/68667158/164568112-2edf7a94-903d-4aed-9f6b-e00ff4457847.gif)
